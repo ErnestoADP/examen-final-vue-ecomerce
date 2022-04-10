@@ -1,7 +1,7 @@
 <template>
   <div class="home">
   <div>
-    <div class="logo"> <img alt="Vue logo" src="../assets/LogoPrueba.png"> </div>
+   
 
 <!--Carrusel-->
 <div>
