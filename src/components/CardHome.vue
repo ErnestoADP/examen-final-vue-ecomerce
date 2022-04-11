@@ -26,7 +26,9 @@
 
 
 <script lang="ts">
+import json from '../assets/api/database.json';
 export default ({
+    
     setup() {
         
     },
@@ -34,7 +36,14 @@ export default ({
 
     },
        mounted() {
-       
+        function cargarJason(){
+            return{
+                productos:json
+            }
+
+        }
+       console.log(cargarJason());
+        
     },
 
    
