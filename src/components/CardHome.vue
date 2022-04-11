@@ -29,9 +29,8 @@
               <b>Descripción:</b> {{ item.descripcion }}
             </b-card-text>
             <hr />
-            <b-button href="#" variant="primary"
-              >Ver tomos disponibles</b-button
-            >
+            <b-button href="#" variant="primary" @click="mangaDetalle(item.id)"
+              >Ver tomos disponibles</b-button>
           </b-card>
         </div></b-col
       >
@@ -48,8 +47,14 @@ export default {
       coleccion: sagasData,
     };
   },
+  methods: {
+    mangaDetalle(id){
+              this.$router.push({path:'/manga/'+ id})
+    }
+      
+  },
   mounted() {
-    console.log(this.coleccion.sagas);
+   // console.log(this.coleccion.sagas);
   },
 };
 </script>

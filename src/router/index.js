@@ -7,6 +7,7 @@ import Iniciar_sesion from '../views/Iniciar_sesion.vue'
 import Registrate from '../views/Registrate.vue'
 import Carrito from "../views/Carrito.vue";
 import Login from "../views/Login.vue";
+import Manga from "../views/Manga.vue";
 
 
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
@@ -48,7 +49,11 @@ const routes = [{
     }, {
         path: "/login",
         name: "Login",
-        component: Login
+        component: Login,
+    }, {
+        path: "/manga/:id",
+        name: "Manga",
+        component: Manga,
     }
 ];
 

@@ -1,29 +1,58 @@
 <template>
-  <div>
-       <b-card
-    title="One Piece"
-    img-src="https://img1.ak.crunchyroll.com/i/spire4/8056a82e973dde98ebb82abd39dc69731593432477_main.jpg"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 30rem;"
-    class="mb-2"
-  >
-    <b-card-text>
-      Descripción del manga
-    </b-card-text>
+  <b-container class="bv-example-row mt-4 card-home">
+    <b-row>
+      <b-col
+        ><div class="card-parent">
+          <b-card  v-for="tomo in this.manga.tomos"
+            :key="tomo.id"
+            
+            :img-src="tomo.imagen"
+            img-alt="Image"
+            img-top
+            tag="article"
+            style="max-width: 30rem"
+            class="mb-2 card-interior"
+          >
+          
+            <b-card-text>
+              <h3>Numero: {{ tomo.numero }}</h3>
+            </b-card-text>
+            <hr />
+            <b-card-text> <b>Precio:</b> {{ tomo.precio }} </b-card-text>
+            <hr />
+            <b-card-text> <b>Stock:</b> {{ tomo.stock }} </b-card-text>
+            <hr />
 
-    <b-button href="#" variant="primary">Comprar</b-button>
-  </b-card>
-  </div>
+            <b-button href="#" variant="primary">Comprar</b-button>
+          </b-card>
+        </div></b-col
+      >
+    </b-row>
+  </b-container>
+  <!-- End Container -->
 </template>
 
 <script>
+import sagasData from "../assets/api/database.json";
 export default {
+  name: "Manga",
+  data() {
+    return {
+      manga: {}
+    };
+  },
+  mounted() {
 
-}
+    // obtener id desde la ruta
+    let id = this.$route.params.id;
+
+    // poner coleccion de mangas en una variable 
+    let coleccion = sagasData.sagas;
+
+    // obtener solo un item de la coleccion por la id 
+    this.manga = coleccion.find((item) => item.id == id);
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
