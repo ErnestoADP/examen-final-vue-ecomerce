@@ -2,20 +2,36 @@
   <!-- Cards Container -->
   <b-container class="bv-example-row mt-4 card-home">
     <b-row>
-      <b-col
-        ><div>
+      <b-col>
+        <div class="card-parent">
           <b-card
-            title="One Piece"
-            img-src="https://img1.ak.crunchyroll.com/i/spire4/8056a82e973dde98ebb82abd39dc69731593432477_main.jpg"
+            v-for="item in this.coleccion.sagas"
+            :key="item.id"
+            title=""
+            :img-src="item.image"
             img-alt="Image"
             img-top
             tag="article"
             style="max-width: 30rem"
-            class="mb-2"
+            class="mb-2 card-interior"
           >
-            <b-card-text> Descripción del manga </b-card-text>
-
-            <b-button href="#" variant="primary">Comprar</b-button>
+            <b-card-text>
+              <h3>{{ item.nombre }}</h3>
+            </b-card-text>
+            <hr />
+            <b-card-text> <b>Autor:</b> {{ item.autor }} </b-card-text>
+            <hr />
+            <b-card-text> <b>Editorial:</b> {{ item.editorial }} </b-card-text>
+            <hr />
+            <b-card-text> <b>Genero:</b> {{ item.genero }} </b-card-text>
+            <hr />
+            <b-card-text>
+              <b>Descripción:</b> {{ item.descripcion }}
+            </b-card-text>
+            <hr />
+            <b-button href="#" variant="primary"
+              >Ver tomos disponibles</b-button
+            >
           </b-card>
         </div></b-col
       >
@@ -24,38 +40,35 @@
   <!-- End Container -->
 </template>
 
-
 <script lang="ts">
-import json from '../assets/api/database.json';
-export default ({
-    
-    setup() {
-        
-    },
-    methods:{
-
-    },
-       mounted() {
-        function cargarJason(){
-            return{
-                productos:json
-            }
-
-        }
-       console.log(cargarJason());
-        
-    },
-
-   
-})
+import sagasData from "../assets/api/database.json";
+export default {
+  data() {
+    return {
+      coleccion: sagasData,
+    };
+  },
+  mounted() {
+    console.log(this.coleccion.sagas);
+  },
+};
 </script>
-
-</script>
-
-
 
 <style>
 .card-home {
   padding-bottom: 100px;
+  
+
+}
+.card-parent{
+     display: flex;
+       flex-direction: row; 
+       flex-wrap: wrap;
+       justify-content: space-around;
+       align-content:space-around;
+}
+.card-interior{
+    margin:20px
+  
 }
 </style>

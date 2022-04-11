@@ -1,8 +1,8 @@
 <template>
   <div class="footer bg-dark text-center py-3">
-    <container fluid>
+    <b-container fluid>
       &copy; 2020 Copyright: El Rincón de los virgenes
-    </container>
+    </b-container>
   </div>
   <!-- Footer -->
 </template>
