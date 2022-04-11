@@ -5,6 +5,9 @@ import AboutView from '../views/AboutView.vue'
 import Cerrar_sesion from '../views/Cerrar_sesion.vue'
 import Iniciar_sesion from '../views/Iniciar_sesion.vue'
 import Registrate from '../views/Registrate.vue'
+import Carrito from "../views/Carrito.vue";
+import Login from "../views/Login.vue";
+
 
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 
@@ -37,6 +40,15 @@ const routes = [{
         path: '/registrate',
         name: 'Registrate',
         component: Registrate
+    },
+    {
+        path: "/carrito",
+        name: "Carrito",
+        component: Carrito
+    }, {
+        path: "/login",
+        name: "Login",
+        component: Login
     }
 ];
 

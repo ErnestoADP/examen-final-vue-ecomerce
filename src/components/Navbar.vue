@@ -10,14 +10,14 @@
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
           <b-nav-item to="/">Home</b-nav-item>
-          <b-nav-item to="/manga">Mangas</b-nav-item>
+          <b-nav-item to="/Manga">Mangas</b-nav-item>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
         <b-navbar-nav style="margin-left: auto" class="ml-auto">
-          <b-nav-item right>
+          <b-nav-item right  to="/Carrito">
             <b-icon
-              to="/carrito"
+         
               style="margin-bottom: 10px"
               icon="basket"
             ></b-icon>
