@@ -10,7 +10,7 @@
             img-alt="Image"
             img-top
             tag="article"
-            style="max-width: 30rem"
+            style="max-width: 15rem"
             class="mb-2 card-interior"
           >
           
@@ -23,7 +23,7 @@
             <b-card-text> <b>Stock:</b> {{ tomo.stock }} </b-card-text>
             <hr />
 
-            <b-button href="#" variant="primary">Comprar</b-button>
+            <b-button href="#" variant="dark">Agregar al Carrito</b-button>
           </b-card>
         </div></b-col
       >
